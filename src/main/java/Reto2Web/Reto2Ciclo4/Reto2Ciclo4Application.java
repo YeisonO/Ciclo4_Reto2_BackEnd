@@ -1,5 +1,6 @@
 package Reto2Web.Reto2Ciclo4;
 
+import Reto2Web.Reto2Ciclo4.Interfaces.InterfaceOrder;
 import Reto2Web.Reto2Ciclo4.Interfaces.InterfacePeripherals;
 import Reto2Web.Reto2Ciclo4.Interfaces.InterfaceUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ public class Reto2Ciclo4Application implements CommandLineRunner{
         private InterfacePeripherals interfacePeripherals;
         @Autowired
         private InterfaceUser interfaceUser;
+        @Autowired
+        private InterfaceOrder interfaceOrder;
 	public static void main(String[] args) {
 		SpringApplication.run(Reto2Ciclo4Application.class, args);
 	}
@@ -23,5 +26,6 @@ public class Reto2Ciclo4Application implements CommandLineRunner{
         public void run(String...args) throws Exception{
             interfacePeripherals.deleteAll();
             interfaceUser.deleteAll();
+            interfaceOrder.deleteAll();
         }
 }
